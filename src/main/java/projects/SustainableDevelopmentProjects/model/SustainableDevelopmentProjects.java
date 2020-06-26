@@ -23,7 +23,7 @@ public class SustainableDevelopmentProjects {
 	private String description;
 	
 	@Column(name="SD_Project_URL", length=100)
-	@Mac(value=100, message="Project URL should be no more than 100 characters.")
+	@Max(value=100, message="Project URL should be no more than 100 characters.")
 	private String url;
 	
 	@Column(name="SD_Project_Comments",length = 1000)

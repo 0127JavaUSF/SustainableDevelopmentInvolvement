@@ -6,19 +6,23 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
+import javax.validation.constraints.Max;
+import javax.validation.constraints.Size;
 
 @Entity
-@Table(name="SustainableDevelopmentGoals_762")
-public class SustainableDevelopmentGoals {
+@Table(name="SD_SustainableDevelopmentGoals_762")
+public class SustainableDevelopmentGoal {
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@Column(name="SD_Goal_Id")
 	private long id;
 	
-	@Column(name="Goal_Name")
+	@Column(name="SD_Goal_Name", length=100)
+	@Size(max=100, message="Goal name should be no longer than 100 characters.")	
 	private String goalName;
 
-	public SustainableDevelopmentGoals(long id, String goalName) {
+	public SustainableDevelopmentGoal(long id, String goalName) {
 		super();
 		this.id = id;
 		this.goalName = goalName;

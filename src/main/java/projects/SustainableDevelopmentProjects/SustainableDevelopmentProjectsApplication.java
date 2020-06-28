@@ -5,8 +5,12 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Bean;
 
+import projects.SustainableDevelopmentProjects.model.EmployeeProfile;
 import projects.SustainableDevelopmentProjects.model.SustainableDevelopmentGoal;
+import projects.SustainableDevelopmentProjects.model.SustainableDevelopmentProject;
+import projects.SustainableDevelopmentProjects.model.repository.EmployeeProfileRepository;
 import projects.SustainableDevelopmentProjects.model.repository.SustainableDevelopmentGoalsRepository;
+import projects.SustainableDevelopmentProjects.model.repository.SustainableDevelopmentProjectsRepository;
 
 @SpringBootApplication
 public class SustainableDevelopmentProjectsApplication {
@@ -52,9 +56,30 @@ public class SustainableDevelopmentProjectsApplication {
 			goalRepository.save(goal15);
 			goalRepository.save(goal16);
 			goalRepository.save(goal17);
+		};	
+		
+	}
+	
+	@Bean
+	public CommandLineRunner Projects_Initialization(SustainableDevelopmentProjectsRepository projectsRepository) {
+		return (args) ->{
+			SustainableDevelopmentProject project1 = new SustainableDevelopmentProject(1L, "Zero Waste Items", "This project is created to provide an opportunity to store and find localisation information for every day items that are \"Zero Waste\", packaging included. In this context, \"Zero Waste\" means 100% made of materials recyclable or biodegradable.\n" + 
+					"\n" + 
+					"The Goal is to reduce the amount of waste reaching the landfills, in an intent to reach sustainable development.\n" + 
+					"\n" + 
+					"[NB: TODO: Need to put some light on the materials that are actually recycled locally, beyond the fact that the object has a recyclable logo.]", "https://github.com/jlmacle/ZeroWasteItems_Backend", "", 12L);
+			projectsRepository.save(project1);
+		};		
+	}
+	
+	@Bean
+	public CommandLineRunner Users_Initialization(EmployeeProfileRepository employeeProfileRepository) {
+		
+		return (args) -> {
+			EmployeeProfile employeeProfile = new EmployeeProfile(1L, "JL", "M", 1L);
+			employeeProfileRepository.save(employeeProfile);
 		};
-		
-		
+	
 	}
 
 }

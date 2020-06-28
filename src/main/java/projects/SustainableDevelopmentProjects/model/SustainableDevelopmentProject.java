@@ -1,5 +1,6 @@
 package projects.SustainableDevelopmentProjects.model;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -38,11 +39,28 @@ public class SustainableDevelopmentProject {
 	@Size(max=1000, message="Comments should be no longer than 1,000 characters.")
 	private String comments;
 	
-	@OneToOne()
-	@JoinTable(name="SD_Project_Goal", joinColumns = {@JoinColumn(name="SD_Project_Id")},
-	inverseJoinColumns = {@JoinColumn(name="SD_Goal_Id")}
-	)
-	private SustainableDevelopmentGoal goal;
+	@JoinColumn(name="Goal_Id", referencedColumnName = "SD_Goal_Id")	
+	@Column(name="Goal_Id")
+	private Long goal_Id;		
 	
 	public SustainableDevelopmentProject() {}
+
+	public SustainableDevelopmentProject(long id,
+			@Size(max = 255, message = "Project name should be no longer than 255 characters.") String name,
+			@Size(max = 1000, message = "Project description should be no longer than 1,000 characters.") String description,
+			@Size(max = 100, message = "Project URL should be no more than 100 characters.") String url,
+			@Size(max = 1000, message = "Comments should be no longer than 1,000 characters.") String comments,
+			Long goal_Id) {
+		super();
+		this.id = id;
+		this.name = name;
+		this.description = description;
+		this.url = url;
+		this.comments = comments;
+		this.goal_Id = goal_Id;
+	}
+
+	
+	
+	
 }

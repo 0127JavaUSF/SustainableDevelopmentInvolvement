@@ -5,8 +5,8 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToOne;
 import javax.persistence.Table;
-import javax.validation.constraints.Max;
 import javax.validation.constraints.Size;
 
 @Entity
@@ -21,7 +21,7 @@ public class SustainableDevelopmentGoal {
 	@Column(name="SD_Goal_Name", length=100)
 	@Size(max=100, message="Goal name should be no longer than 100 characters.")	
 	private String goalName;
-	
+		
 	public SustainableDevelopmentGoal() {}
 
 	public SustainableDevelopmentGoal(long id, String goalName) {

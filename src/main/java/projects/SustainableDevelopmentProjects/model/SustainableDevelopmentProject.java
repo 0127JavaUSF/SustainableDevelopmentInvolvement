@@ -44,5 +44,5 @@ public class SustainableDevelopmentProject {
 	)
 	private SustainableDevelopmentGoal goal;
 	
-
+	public SustainableDevelopmentProject() {}
 }

@@ -34,7 +34,7 @@ public class EmployeeProfile {
 	inverseJoinColumns = {@JoinColumn(name="SD_Project_Id")})
 	private SustainableDevelopmentProject project;
 	
-	
+	public EmployeeProfile() {}
 	
 	
 	

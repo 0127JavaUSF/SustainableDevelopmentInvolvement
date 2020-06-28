@@ -21,6 +21,8 @@ public class SustainableDevelopmentGoal {
 	@Column(name="SD_Goal_Name", length=100)
 	@Size(max=100, message="Goal name should be no longer than 100 characters.")	
 	private String goalName;
+	
+	public SustainableDevelopmentGoal() {}
 
 	public SustainableDevelopmentGoal(long id, String goalName) {
 		super();

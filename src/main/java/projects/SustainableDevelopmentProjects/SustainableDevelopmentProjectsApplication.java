@@ -5,10 +5,10 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Bean;
 
-import projects.SustainableDevelopmentProjects.model.EmployeeProfile;
+import projects.SustainableDevelopmentProjects.model.EmployeeInvolvementProfile;
 import projects.SustainableDevelopmentProjects.model.SustainableDevelopmentGoal;
 import projects.SustainableDevelopmentProjects.model.SustainableDevelopmentProject;
-import projects.SustainableDevelopmentProjects.model.repository.EmployeeProfileRepository;
+import projects.SustainableDevelopmentProjects.model.repository.EmployeeInvolvementProfileRepository;
 import projects.SustainableDevelopmentProjects.model.repository.SustainableDevelopmentGoalsRepository;
 import projects.SustainableDevelopmentProjects.model.repository.SustainableDevelopmentProjectsRepository;
 
@@ -73,10 +73,10 @@ public class SustainableDevelopmentProjectsApplication {
 	}
 	
 	@Bean
-	public CommandLineRunner Users_Initialization(EmployeeProfileRepository employeeProfileRepository) {
+	public CommandLineRunner Users_Initialization(EmployeeInvolvementProfileRepository employeeProfileRepository) {
 		
 		return (args) -> {
-			EmployeeProfile employeeProfile = new EmployeeProfile(1L, "JL", "M", 1L);
+			EmployeeInvolvementProfile employeeProfile = new EmployeeInvolvementProfile(1L, "JL", "M", 1L);
 			employeeProfileRepository.save(employeeProfile);
 		};
 	

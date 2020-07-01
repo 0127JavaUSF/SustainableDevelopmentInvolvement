@@ -30,7 +30,6 @@ public class ProjectController {
 	
 	@PostMapping("/projects")
 	public @ResponseBody ResponseEntity<SustainableDevelopmentProject> createProjectReference(@RequestBody SustainableDevelopmentProject project) {
-		System.out.println(project.toString());
 		SustainableDevelopmentProject transactionResult = projectRepository.save(project);	
 		return new ResponseEntity<SustainableDevelopmentProject>(transactionResult, HttpStatus.CREATED);
 	}

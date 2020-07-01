@@ -7,15 +7,17 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.Table;
+import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 
 @Entity
 @Table(name="SD_Employee_Profile")
-public class EmployeeProfile {
+public class EmployeeInvolvementProfile {
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name="SD_Employee_Id")
+	@NotNull
 	private long id;
 	
 	@Column(name="SD_First_Name", length=80)
@@ -28,9 +30,10 @@ public class EmployeeProfile {
 	
 	@JoinColumn(name="project_id", referencedColumnName = "SD_Project_Id")
 	@Column(name="project_id")
+	@NotNull
 	private Long project_Id;
 	
-	public EmployeeProfile(long id,
+	public EmployeeInvolvementProfile(long id,
 			@Size(max = 80, message = "First name should not be longer than 80 characters.") String firstName,
 			@Size(max = 80, message = "Last name should not be longer than 80 characters.") String lastName,
 			Long project_Id) {
@@ -42,7 +45,54 @@ public class EmployeeProfile {
 	}
 
 
-	public EmployeeProfile() {}
+	public EmployeeInvolvementProfile() {}
+
+
+	public long getId() {
+		return id;
+	}
+
+
+	public void setId(long id) {
+		this.id = id;
+	}
+
+
+	public String getFirstName() {
+		return firstName;
+	}
+
+
+	public void setFirstName(String firstName) {
+		this.firstName = firstName;
+	}
+
+
+	public String getLastName() {
+		return lastName;
+	}
+
+
+	public void setLastName(String lastName) {
+		this.lastName = lastName;
+	}
+
+
+	public Long getProject_Id() {
+		return project_Id;
+	}
+
+
+	public void setProject_Id(Long project_Id) {
+		this.project_Id = project_Id;
+	}
+
+
+	@Override
+	public String toString() {
+		return "EmployeeInvolvementProfile [id=" + id + ", firstName=" + firstName + ", lastName=" + lastName
+				+ ", project_Id=" + project_Id + "]";
+	}
 	
 	
 	

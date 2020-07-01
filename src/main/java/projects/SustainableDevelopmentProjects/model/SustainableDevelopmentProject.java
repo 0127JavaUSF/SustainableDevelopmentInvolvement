@@ -7,7 +7,6 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.Table;
-import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 
 
@@ -18,12 +17,10 @@ public class SustainableDevelopmentProject {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name="SD_Project_Id")
-	@NotNull
 	private long id;
 	
 	@Column(name="SD_Project_Name", length=255)
 	@Size(max=255, message="Project name should be no longer than 255 characters.")
-	@NotNull
 	private String name;
 	
 	@Column(name="SD_Project_Description", length=1000)

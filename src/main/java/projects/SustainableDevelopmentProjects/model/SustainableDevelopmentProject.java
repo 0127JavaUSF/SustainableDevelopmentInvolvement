@@ -1,15 +1,11 @@
 package projects.SustainableDevelopmentProjects.model;
 
-import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
-import javax.persistence.JoinColumns;
-import javax.persistence.JoinTable;
-import javax.persistence.OneToOne;
 import javax.persistence.Table;
 import javax.validation.constraints.Size;
 
@@ -60,6 +56,61 @@ public class SustainableDevelopmentProject {
 		this.goal_Id = goal_Id;
 	}
 
+	@Override
+	public String toString() {
+		return "SustainableDevelopmentProject [id=" + id + ", name=" + name + ", description=" + description + ", url="
+				+ url + ", comments=" + comments + ", goal_Id=" + goal_Id + "]";
+	}
+
+	//Remember the getters and setters.
+	public long getId() {
+		return id;
+	}
+
+	public void setId(long id) {
+		this.id = id;
+	}
+
+	public String getName() {
+		return name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+	}
+
+	public String getDescription() {
+		return description;
+	}
+
+	public void setDescription(String description) {
+		this.description = description;
+	}
+
+	public String getUrl() {
+		return url;
+	}
+
+	public void setUrl(String url) {
+		this.url = url;
+	}
+
+	public String getComments() {
+		return comments;
+	}
+
+	public void setComments(String comments) {
+		this.comments = comments;
+	}
+
+	public Long getGoal_Id() {
+		return goal_Id;
+	}
+
+	public void setGoal_Id(Long goal_Id) {
+		this.goal_Id = goal_Id;
+	}
+	
 	
 	
 	

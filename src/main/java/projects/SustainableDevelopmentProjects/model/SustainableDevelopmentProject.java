@@ -37,7 +37,7 @@ public class SustainableDevelopmentProject {
 	
 	@JoinColumn(name="Goal_Id", referencedColumnName = "SD_Goal_Id")	
 	@Column(name="Goal_Id")
-	private Long goal_Id;		
+	private Long goal_id;		
 	
 	public SustainableDevelopmentProject() {}
 
@@ -46,20 +46,20 @@ public class SustainableDevelopmentProject {
 			@Size(max = 1000, message = "Project description should be no longer than 1,000 characters.") String description,
 			@Size(max = 100, message = "Project URL should be no more than 100 characters.") String url,
 			@Size(max = 1000, message = "Comments should be no longer than 1,000 characters.") String comments,
-			Long goal_Id) {
+			Long goal_id) {
 		super();
 		this.id = id;
 		this.name = name;
 		this.description = description;
 		this.url = url;
 		this.comments = comments;
-		this.goal_Id = goal_Id;
+		this.goal_id = goal_id;
 	}
 
 	@Override
 	public String toString() {
 		return "SustainableDevelopmentProject [id=" + id + ", name=" + name + ", description=" + description + ", url="
-				+ url + ", comments=" + comments + ", goal_Id=" + goal_Id + "]";
+				+ url + ", comments=" + comments + ", goal_Id=" + goal_id + "]";
 	}
 
 	//Remember the getters and setters.
@@ -103,12 +103,12 @@ public class SustainableDevelopmentProject {
 		this.comments = comments;
 	}
 
-	public Long getGoal_Id() {
-		return goal_Id;
+	public Long getGoal_id() {
+		return goal_id;
 	}
 
-	public void setGoal_Id(Long goal_Id) {
-		this.goal_Id = goal_Id;
+	public void setGoal_id(Long goal_id) {
+		this.goal_id = goal_id;
 	}
 	
 	

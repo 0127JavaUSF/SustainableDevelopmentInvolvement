@@ -20,6 +20,7 @@ public class GoalController {
 	public List<SustainableDevelopmentGoal> getAllGoals(){	
 		List <SustainableDevelopmentGoal> goals = goalRepository.findAll();		
 		goals.sort(new SortGoalsByName());		
+		System.out.println(goals);
 		return goals;
 	}
 

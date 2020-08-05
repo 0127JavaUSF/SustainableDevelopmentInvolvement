@@ -25,9 +25,10 @@ public class ProjectController {
 	@Autowired SustainableDevelopmentProjectsRepository projectRepository;
 	
 	@GetMapping("/projects")
-	public List<SustainableDevelopmentProject> getAllProject() {
+	public List<SustainableDevelopmentProject> getAllProjects() {
 		List<SustainableDevelopmentProject> results = projectRepository.findAll();
 		results.sort(new SortProjectsByName());
+		
 		return results;
 	}
 	
@@ -42,5 +43,7 @@ public class ProjectController {
 		SustainableDevelopmentProject transactionResult = projectRepository.save(project);	
 		return new ResponseEntity<SustainableDevelopmentProject>(transactionResult, HttpStatus.CREATED);
 	}
+	
+	
 
 }
